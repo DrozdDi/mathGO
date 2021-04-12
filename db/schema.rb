@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_04_06_181741) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "battles", force: :cascade do |t|
     t.string "has_players"
     t.integer "lp_points", default: 100
