@@ -1,0 +1,15 @@
+<%= form_with(model: battle) do |form| %>
+
+  <div>
+    <%= form.label :left_player, 'Гравець зліва' %>
+    <%= form.text_field :left_player %>
+
+    <%= form.label :right_player , 'Гравець справа', style: 'margin-top: 10px; '%>
+    <%= form.text_field :right_player %>
+
+  </div>
+
+  <div class="actions">
+    <%= form.submit :Submit, class: 'btn btn-info', style: 'margin-top: 10px; '%>
+  </div>
+<% end %>

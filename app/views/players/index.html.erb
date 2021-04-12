@@ -1,0 +1,29 @@
+
+<div class="col-md-12">
+<h3>Гравці</h3>
+
+<table class="table">
+  <thead class="centered">
+    <tr>
+      <th class="centered">Ім'я гравця</th>
+      <th class="centered">Всього боїв</th>
+      <th class="centered">Перемог</th>
+      <th class="centered">Програшів</th>
+    </tr>
+  </thead>
+
+  <tbody class="centered">
+    <% @players.each do |player| %> 
+      <tr>
+        <td><%= player.name %></td>
+        <td><%= player.total_battles %></td> 
+        <td><%= player.win %></td>
+        <td><%= player.loss %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+</div>
+
+  

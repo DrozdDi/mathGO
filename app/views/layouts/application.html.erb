@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>MathGO</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+ 
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+
+    <div class="navbar navbar-default navbar-static-top">
+      <div class="navbar-collapse collapse navbar-responsive-collapse">
+      
+        <ul class="nav navbar-nav col-md-12">
+          <h1 class="logo">MathGO</h1>
+          <li class="btn col-md-4 head-btn"><%= link_to 'Розпочати бій', new_battle_path %></li>
+          <li class="btn col-md-4 head-btn"><%= link_to 'Гравці', players_path %></li>
+          <li class="btn col-md-4 head-btn"><%= link_to 'Бої', battles_path %></li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <%= bootstrap_flash %>  
+        <%= yield %>
+      </div><!--/row-->
+      
+      <footer>
+        
+      </footer>
+
+    </div> <!-- /container -->
+
+  </body>
+</html>

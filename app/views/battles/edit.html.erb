@@ -1,0 +1,44 @@
+
+
+
+ <div class="col-lg-12">
+          <div class="col-lg-4 l_player"> 
+            <div class="centered"><h2><%=@battle.players.first.name%></h2></div>
+            <%= image_tag 'left_p.png' %> 
+            <% lp_points = @battle.lp_points%>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%=lp_points%>%;"  aria-valuenow=<%=lp_points.to_s%> aria-valuemin="0" aria-valuemax="100">
+              <%=lp_points %>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 centered">
+            <h2>VS</h2>
+            <%if @battle[:status] == "game_over"%>
+                <% @battle.players.where(game: FALSE).name %>
+            <%else%>
+                <div class="alert alert-info">
+                <b><%=@battle.math_sample %></b> 
+                <%# <%=@battle.right_answer %> 
+                
+                <%= render 'answer_form', battle: @battle %>
+            </div>
+            <%end%>
+          </div>
+          <div class="col-lg-4 r_player"> 
+            <div class="centered"><h2><%=@battle.players.last.name%></h2></div>
+            <%= image_tag 'right_p.png'  %>
+            <% rp_points = @battle.rp_points%>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" style="width: <%=rp_points%>%;"  aria-valuenow=<%=rp_points.to_s%> aria-valuemin="0" aria-valuemax="100">
+              <%=rp_points %>
+              </div>
+            </div>
+          </div>
+        </div><!--/lg-12-->
+
+
+
+
+
+ 

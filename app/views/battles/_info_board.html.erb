@@ -1,0 +1,22 @@
+<%@battle.players.first[:game] == false ?  player  = @battle.players.first[:name] : player  = @battle.players.last[:name]%>
+<%if  @battle[:status] == "first_move"%>
+  <h4>Змагання розпочато!</h4>
+<%elsif @battle[:status] == "correct_answer"%>
+  <div class="alert alert-success">
+    <% damage = @battle[:damage] %>
+    <p><%=player%>, вірно! <br>
+    Сила удару: <%= damage%></p>
+    <p>Затрачено часу: <%=20 - damage%> сек.</p>
+  </div>
+<%elsif @battle[:status] == "too_long"%>
+  <div class="alert alert-warning">
+      <p><%=player%>, ти цілився довше 20-и секунд.</p>
+      <p>Удар не зараховано</p>
+    </div>
+<%elsif @battle[:status] == "uncorrect_answ"%>
+  <div class="alert alert-danger">
+      <p><%=player%>, ти промахнувся.<br>
+      Правильна відповідь:  <%= @battle[:system_answer]%></p>
+    </div>
+<%end%>
+

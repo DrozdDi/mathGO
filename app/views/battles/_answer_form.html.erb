@@ -1,0 +1,11 @@
+<div>
+  <%= form_with(model: battle) do |form| %>
+    <div class="field">
+      <b>=</b><br>
+      <%= form.text_field :answer, class: 'form-control', autofocus: true, :rows => 10 %>
+      <br> 
+      <%= form.submit :'Удар!', class: 'btn btn-info', style: 'margin-top: 10px; '%>
+    </div>
+  <% end %>
+</div>
+
