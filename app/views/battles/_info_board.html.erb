@@ -1,6 +1,6 @@
 <%@battle.players.first[:game] == false ?  player  = @battle.players.first[:name] : player  = @battle.players.last[:name]%>
 <%if  @battle[:status] == "first_move"%>
-  <h4>Змагання розпочато!</h4>
+  <h4>Бій розпочато!</h4>
 <%elsif @battle[:status] == "correct_answer"%>
   <div class="alert alert-success">
     <% damage = @battle[:damage] %>

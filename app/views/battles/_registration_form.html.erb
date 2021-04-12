@@ -2,14 +2,14 @@
 
   <div>
     <%= form.label :left_player, 'Гравець зліва' %>
-    <%= form.text_field :left_player %>
-
+    <%= form.text_field :left_player, class: 'form-control' %>
+    <br>
     <%= form.label :right_player , 'Гравець справа', style: 'margin-top: 10px; '%>
-    <%= form.text_field :right_player %>
+    <%= form.text_field :right_player, class: 'form-control' %>
 
   </div>
 
   <div class="actions">
-    <%= form.submit :Submit, class: 'btn btn-info', style: 'margin-top: 10px; '%>
+    <%= form.submit :"Далі", class: 'btn btn-info', style: 'margin-top: 10px; '%>
   </div>
 <% end %>
