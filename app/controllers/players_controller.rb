@@ -22,11 +22,9 @@ class PlayersController < ApplicationController
 
     respond_to do |format|
       if @player.save
-        format.html { redirect_to @player, notice: "Player was successfully created." }
-        format.json { render :show, status: :created, location: @player }
+        format.html { redirect_to @player}
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -35,21 +33,10 @@ class PlayersController < ApplicationController
   def update
     respond_to do |format|
       if @player.update(player_params)
-        format.html { redirect_to @player, notice: "Player was successfully updated." }
-        format.json { render :show, status: :ok, location: @player }
+        format.html { redirect_to @player}
       else
         format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @player.errors, status: :unprocessable_entity }
       end
-    end
-  end
-
-  # DELETE /players/1 or /players/1.json
-  def destroy
-    @player.destroy
-    respond_to do |format|
-      format.html { redirect_to players_url, notice: "Player was successfully destroyed." }
-      format.json { head :no_content }
     end
   end
 
