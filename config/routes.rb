@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :battles
   
   get 'battles/new'
+  get 'battles/[:id]'
 
   root 'battles#new'
 end
