@@ -111,6 +111,15 @@ button {
   margin-left: 25%;
 }
 
+.boxhead a {
+  color: #333;
+  text-decoration: none;
+}
+
+.boxhead a:hover {
+  text-decoration: none;
+  color: green;
+  }
 
 
 @media (max-width: 992px) {

@@ -5,7 +5,9 @@
 <table class="table">
   <thead class="centered">
     <tr>
-      <th class="centered">Гравці</th>
+      <th class="centered">id</th>
+      <th class="centered">Гравець справа</th>
+      <th class="centered">Гравець зліва</th>
       <th class="centered">Життя гравця зліва</th>
       <th class="centered">Життя гравця справа</th>
     </tr>
@@ -13,8 +15,15 @@
 
   <tbody class="centered">
     <% @battles.each do |battle| %>
-      <tr>
-        <td><%= battle.has_players %></td>
+      <%if battle.status == "game_over"%>
+        <tr class='alert alert-success'>
+      <%else%>
+        <tr>
+      <%end%>
+        <td class="boxhead"><%= link_to battle.id, battle_path(battle)%></td>
+        <%id = battle.players.first[:id]%>
+        <td class="boxhead"><%= link_to battle.players.first[:name], "/players/#{id}"%></td>
+        <td class="boxhead"><%= link_to battle.players.last[:name], "/players/#{id}"%></td>
         <td><%= battle.lp_points %></td>
         <td><%= battle.rp_points %></td>
       </tr>
